@@ -1,0 +1,26 @@
+{
+  "name": "Microsoft Rewards dailies for wavebox",
+  "version": "1.0",
+  "description": "A simple Wavebox extension that provides an badge withe the number of incomplete daily set items.",
+  "permissions": [],
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [ "*://account.microsoft.com/rewards/*" ],
+      "run_at": "document_idle",
+      "js": [
+        "wavebox.js",
+        "msrewards_wavebox.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "msrewards_page.js"
+  ]
+}
